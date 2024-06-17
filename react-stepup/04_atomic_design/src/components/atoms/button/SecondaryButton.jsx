@@ -3,10 +3,10 @@ import {BaseButton} from "./BaseButton";
 
 export const SecondaryButton = (props) => {
   //<PrimaryButton>childrenで受け取る部分</PrimaryButton>
-  const {children} = props;
+  const {children, onClick} = props;
 
   return (
-    <SButton>{children}</SButton>
+    <SButton onClick={onClick}>{children}</SButton>
   )
 }
 const SButton = styled(BaseButton)`
