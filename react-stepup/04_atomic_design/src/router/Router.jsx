@@ -19,8 +19,6 @@ export const Router = () => {
           </HeaderOnly>
         </Route>
       </Switch>
-
     </BrowserRouter>
   )
-
 }
