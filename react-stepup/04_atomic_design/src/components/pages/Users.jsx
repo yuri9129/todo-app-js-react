@@ -5,6 +5,9 @@ import { useLocation} from "react-router-dom";
 import {SecondaryButton} from "../atoms/button/SecondaryButton";
 import {useContext} from "react";
 import {UserContext} from "../../providers/UserProvider";
+import {useRecoilState} from "recoil";
+import {userState} from "../../store/userState";
+
 
 const users = [...Array(10).keys()].map( (val) => {
   return {
@@ -24,7 +27,10 @@ const users = [...Array(10).keys()].map( (val) => {
 
 export const Users = () => {
 
-  const {userInfo, setUserInfo} = useContext(UserContext);
+  // const {userInfo, setUserInfo} = useContext(UserContext);
+  const [userInfo, setUserInfo] = useRecoilState(userState);
+
+
   const onClickSwitch = () => setUserInfo({isAdmin: !userInfo.isAdmin})
 
   return (
